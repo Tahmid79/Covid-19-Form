@@ -1,0 +1,70 @@
+<h1>Step 1</h1>
+
+<div class="container" >
+
+  <h1>Gender</h1>
+
+  <div class="ui form">
+
+    <div class="grouped fields">
+      <label>Gender</label>
+
+      <div class="field" *ngFor="let field of fields">
+        <div class="ui radio checkbox" >
+          <input [id]="field" [value]="field" type="radio" name="example2"  (change)="gnd($event)"   >
+          <label>{{field}}</label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--
+  <h1>{{ checked }}</h1>
+  -->
+
+  <h1>Age</h1>
+
+  <div class="ui input">
+    <input type="number" [(ngModel)]="age" >
+  </div>
+  <h4>Range : 1-120</h4>
+
+  <!--
+  <h1>{{age}}</h1>
+    -->
+
+  <h1>Body Temperature (F)</h1>
+
+  <div class="ui input">
+    <input type="number" [(ngModel)]="temp" >
+
+  </div>
+  <h4>Range : 90-110</h4>
+
+  <!--
+  <h1>{{temp}}</h1>
+  -->
+
+  <button class="ui button"  (click)="s1 = true"
+  >Next
+  </button>
+
+  <div id="cnf" class="container" *ngIf="s1">
+
+    <h3>Are you sure the information is correct?</h3>
+
+    <button class="ui left button" (click)="validate()" >Confirm</button>
+    <button  id="cnc" class="ui right button"  (click)="s1=false" >Cancel</button>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+

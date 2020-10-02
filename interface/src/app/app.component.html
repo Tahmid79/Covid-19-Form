@@ -1,0 +1,24 @@
+<div class="ui container" >
+
+  <div class="ui secondary pointing menu">
+    <a routerLink="/" class="item" >Home</a>
+    <a routerLink="/results" class="item" >Entries</a>
+    <h4 class="ui right floated header item" >Covid-19 Self-Assessment</h4>
+  </div>
+
+  <div class="ui segment">
+    <router-outlet></router-outlet>
+  </div>
+
+
+  <div class="ui section divider"></div>
+
+
+  <div class="ui segment">
+      <h3>Disclaimer</h3>
+      <p>{{disclaimer}}</p>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,28 @@
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>SL</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Temperature</th>
+      <th>Date</th>
+      <th>Score</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <tr *ngFor="let record of records">
+
+        <td data-label="SL">{{records.indexOf(record)+1}}</td>
+        <td data-label="Age">{{record.age}}</td>
+        <td data-label="Gender">{{record.gender}}</td>
+        <td data-label="Temperature">{{record.temperature}}</td>
+        <td data-label="Date">{{record.date}}</td>
+        <td data-label="Score">{{record.score}}</td>
+        <td data-label="Result">{{record.result}}</td>
+
+      </tr>
+
+  </tbody>
+</table>

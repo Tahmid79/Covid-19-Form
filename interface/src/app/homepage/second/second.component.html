@@ -1,0 +1,57 @@
+<h1>Step 2</h1>
+
+<h3>Please mention if you have any of the following symptoms</h3>
+
+<div class="container" >
+
+  <div class="container">
+
+    <div class="ui form">
+      <div class="grouped fields">
+        <label>Symptoms</label>
+
+
+        <div class="field" *ngFor="let symptom of symptoms1">
+          <div class="ui checkbox">
+            <input type="checkbox" name="example" [checked]="symptom.isChecked"  (change)="setSymp1($event , symptom.label)"  >
+            <label>{{symptom.label}}</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--
+    <h2>Symptoms</h2><br/>
+    <h1>{{getSymp1()}}</h1>
+    -->
+
+
+  </div>
+
+
+  <div class="container">
+
+    <button  class="ui left button"  (click)="back()" >Back</button>
+
+    <button id="rt1" class="ui right button" (click)="s1 = true"
+  >
+    Next
+  </button>
+
+
+
+  </div>
+
+  <div id="cnf" class="container" *ngIf="s1">
+
+    <h3>Are you sure the information is correct?</h3>
+
+    <button class="ui left button" (click)="next()"  >Confirm</button>
+    <button id="cnc" class="ui right button" (click)="s1 =false" >Cancel</button>
+
+  </div>
+
+
+
+</div>
