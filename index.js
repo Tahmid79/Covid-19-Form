@@ -18,7 +18,7 @@ var sample_routes = require('./routes/samples') ;
 
 server.use('/samples' ,  sample_routes) ;
 
-
+//server.get('/' , (req, res)=> res.json('Index Page')) ;
 
 //Serving Static Files
 
@@ -26,15 +26,18 @@ server.use('/samples' ,  sample_routes) ;
 if (process.env.NODE_ENV === 'production') {
 
 
-    server.use(express.static('interface/dist/interface')) ;
+    server.use(express.static('interface/dist/interface' , {redirect: false})) ;
 
     server.get('*' ,(req, res) =>{
+
+        let str = 'interface/dist/interface' ;
 
         var options = {
             root : path.join(__dirname + 'interface/dist/interface')
         } ;
 
-        res.sendFile('index.html' , options) ;
+        //res.sendFile('index.html' , options) ;
+        res.sendFile(path.resolve(str + '/index.html')) ;
 
     })  ;
 
